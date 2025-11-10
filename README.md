@@ -1,0 +1,2 @@
+# SWECOOSC369
+SWE Fall 2025 Class 
