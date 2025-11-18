@@ -1,0 +1,37 @@
+ # page.set_input_files("input[type='file']", "/Users/praiseben/SWECOOSC369/mummy.pdf")
+        # page.wait_for_timeout(30000)
+
+        # with page.expect_request("**/upload**") as upload:
+        #     page.set_input_files("input[type='file']", "/Users/praiseben/SWECOOSC369/mummy.pdf")
+
+        # # then wait for the corresponding response
+        # with page.expect_response("**/upload**") as upload_response:
+        #     pass
+
+        # print("Upload complete!")
+
+        # # input_box = page.get_by_placeholder("Ask anything or send a message ...")
+
+        # # page.get_by_placeholder("Ask anything or send a message ...").fill(
+        # #     "@mummy."
+        # # )
+        # # page.get_by_role("option", name="mummy.pdf").click()
+
+
+        # # page.get_by_placeholder("Ask anything or send a message ...").fill(
+        # #     "What is this document about?"
+        # # )
+        # # page.locator("button[title='Send message']").click()
+        # # page.wait_for_timeout(10000)
+
+        # input_box = page.get_by_placeholder("Ask anything or send a message ...")
+        # input_box.click()
+
+        # # Step 2: type @ to trigger suggestions
+        # input_box.type("@", delay=50)
+
+        # # Step 3: wait for suggestion item and click it
+        # page.get_by_role("option", name="mummy.pdf").click()
+
+        # # Step 4: finish the question
+        # input_box.type(" What is this document about?")

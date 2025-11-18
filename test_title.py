@@ -17,5 +17,3 @@ def test_has_title():
         print("Screenshot taken and saved as test_has_title.png")
 
         browser.close()
-
-test_has_title()

@@ -10,11 +10,10 @@ def test_get_started_link():
 
         page.goto("https://grabdocs.com")
         get_started = page.get_by_role("link", name="Get started", exact=True)
+        # get_started = page.get_by_role("link", name="Get started")
         get_started.click()
 
         page.screenshot(path="img/test_get_started_link.png")
         print("Screenshot taken and saved as test_get_started_link.png")
 
         browser.close()
-
-test_get_started_link()
