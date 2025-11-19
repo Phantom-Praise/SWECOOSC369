@@ -15,20 +15,24 @@ def test_upload():
 
         page.goto("https://app.grabdocs.com/login")
 
-        page.get_by_placeholder("Username").fill("test101")
-        page.get_by_placeholder("Password").fill("123456789")
+        # page.get_by_placeholder("Username").fill("test101")
+        # page.get_by_placeholder("Password").fill("123456789")
 
+        # page.get_by_role("button", name="Sign In").click()
+        # page.wait_for_timeout(3000)
+
+        # page.get_by_placeholder("Enter 6-digit code").fill("335577")
+        # page.get_by_role("button", name="Verify Code").click()
+        # page.wait_for_timeout(10000)
+
+        page.get_by_placeholder("Username").fill("izuchukwu")
+        page.get_by_placeholder("Password").fill("password123")
         page.get_by_role("button", name="Sign In").click()
         page.wait_for_timeout(3000)
-
-        page.get_by_placeholder("Enter 6-digit code").fill("335577")
-        page.get_by_role("button", name="Verify Code").click()
-        page.wait_for_timeout(10000)
 
         page.get_by_role("button", name="Workspace").click()
         page.wait_for_timeout(5000)
 
-        
         page.get_by_role("button", name="Create Workspace").click()
 
         with open("create_workspace_dom.html", "w", encoding="utf-8") as f:

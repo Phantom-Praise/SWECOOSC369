@@ -1,6 +1,6 @@
-# pytest -s forms.py
+# pytest -s sign_out.py
 
-# PWDEBUG=1 pytest -s forms.py
+# PWDEBUG=1 pytest -s sign_out.py
 
 import os
 from dotenv import load_dotenv
@@ -28,26 +28,15 @@ def test_upload():
         page.get_by_placeholder("Username").fill("izuchukwu")
         page.get_by_placeholder("Password").fill("password123")
         page.get_by_role("button", name="Sign In").click()
-        page.wait_for_timeout(3000)
-
-        page.get_by_role("button", name="Forms").click()
         page.wait_for_timeout(5000)
 
-        with open("forms_dom.html", "w", encoding="utf-8") as f:
+        with open("settings_dom.html", "w", encoding="utf-8") as f:
             f.write(page.content())
         
-        page.get_by_text("RSVP Form", exact=True).click()
+        page.locator("button.rounded-full.bg-blue-600").click()
         page.wait_for_timeout(5000)
-        # with open("forms_rsvp_dom.html", "w", encoding="utf-8") as f:
-        #     f.write(page.content())
-
         
-        page.get_by_placeholder("Enter your full name").fill("Praise Ben")
-        page.get_by_placeholder("your.email@example.com").fill("praiseben13@gmail.com")
-        page.locator("select").nth(0).select_option("No, I cannot attend")
-        page.locator("select").nth(1).select_option("1 guest")
-        page.get_by_role("button", name="Save Form").click()
-        # page.locator('button[title="Save Form"]').click()
-
+        page.get_by_role("button", name="Sign out").click()
 
         page.wait_for_timeout(5000)
+

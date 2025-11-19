@@ -18,6 +18,11 @@ def test_get_past_event_dom():
         page.get_by_role("button", name="Sign In").click()
         page.wait_for_timeout(3000)
 
+        # page.get_by_placeholder("Username").fill("izuchukwu")
+        # page.get_by_placeholder("Password").fill("password123")
+        # page.get_by_role("button", name="Sign In").click()
+        # page.wait_for_timeout(3000)
+
         page.get_by_placeholder("Enter 6-digit code").fill("335577")
         page.get_by_role("button", name="Verify Code").click()
         page.wait_for_timeout(5000)

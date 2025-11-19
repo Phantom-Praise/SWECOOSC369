@@ -1,6 +1,6 @@
 # pytest -s main.py
 
-# PWDEBUG=1 pytest -s main.py
+# PWDEBUG=1 pytest -s calendar_new_event.py
 
 import os
 from dotenv import load_dotenv
@@ -15,12 +15,20 @@ def create_calendar_event():
         page = context.new_page()
 
         page.goto("https://app.grabdocs.com/login")
-        page.get_by_placeholder("Username").fill("test101")
-        page.get_by_placeholder("Password").fill("123456789")
+
+        page.get_by_placeholder("Username").fill("izuchukwu")
+        page.get_by_placeholder("Password").fill("password123")
         page.get_by_role("button", name="Sign In").click()
         page.wait_for_timeout(3000)
-        page.get_by_placeholder("Enter 6-digit code").fill("335577")
-        page.get_by_role("button", name="Verify Code").click()
+
+
+        # page.get_by_placeholder("Username").fill("test101")
+        # page.get_by_placeholder("Password").fill("123456789")
+        # page.get_by_role("button", name="Sign In").click()
+
+        # page.wait_for_timeout(3000)
+        # page.get_by_placeholder("Enter 6-digit code").fill("335577")
+        # page.get_by_role("button", name="Verify Code").click()
         page.wait_for_timeout(5000)
 
         page.get_by_role("button", name="Calendar").click()
@@ -38,7 +46,7 @@ def create_calendar_event():
             f.write(html)
         # FILL EVENT TITLE
         event_page.get_by_placeholder("Team Meeting, Client Call, etc.").fill(
-            "SWE Group 1 Team Meeting"
+            "SWE Group 1 Team Meeting 7.0"
         )
 
         # DESCRIPTION
@@ -47,13 +55,13 @@ def create_calendar_event():
         )
 
         # START DATE
-        event_page.locator("input[type=date]").nth(0).fill("2025-11-24")
+        event_page.locator("input[type=date]").nth(0).fill("2025-11-26")
 
         # START TIME
         event_page.locator("input[type=time]").nth(0).fill("19:30")  # 07:30 PM
 
         # END DATE
-        event_page.locator("input[type=date]").nth(1).fill("2025-11-24")
+        event_page.locator("input[type=date]").nth(1).fill("2025-11-29")
 
         # END TIME
         event_page.locator("input[type=time]").nth(1).fill("20:30")  # 08:30 PM
@@ -109,3 +117,5 @@ def create_calendar_event():
         event_page.get_by_role("button", name="Create Event").click()
 
         page.wait_for_timeout(3000)
+
+create_calendar_event()
